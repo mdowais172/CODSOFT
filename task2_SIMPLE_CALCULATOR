@@ -1,0 +1,78 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// SIMPLE CALCULATOR  that performs basic arithmetic operations
+// such as addition, subtraction, multiplication, and division.
+
+float add(float n1, float n2)
+{
+    return n1 + n2;
+}
+float subtract(float n1, float n2)
+{
+    return n1 - n2;
+}
+float multiply(float n1, float n2)
+{
+    return n1 * n2;
+}
+float divide(float n1, float n2)
+{
+    if (n2 == 0)
+    {
+        cout << "Cannot divide by 0";
+        return 0;
+    }
+    else
+    {
+        return n1 / n2;
+    }
+}
+
+int main()
+{
+    char ch;
+
+    do{        
+    string s;
+    cout << "What operation you want to perform\n(ADD,SUBTRACT,MULTIPLY,DIVIDE)" << endl;
+    cin >> s;
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    float result;
+    float n1, n2;
+    cout << "Enter n1: ";
+    cin >> n1;
+    cout << "Enter n2: ";
+    cin >> n2;
+
+        if (s == "add")
+    {
+        result = add(n1, n2);
+    }
+    else if (s == "subtract")
+    {
+        result = subtract(n1, n2);
+    }
+    else if (s == "multiply")
+    {
+        result = multiply(n1, n2);
+    }
+    else if (s == "divide")
+    {
+        result = divide(n1, n2);
+    }
+    else
+    {
+        cout << "Invalid operation!" << endl;
+    }
+
+    cout << "Result: " << result << endl;
+    cout << "Do you want to continue: y/n ?\n";
+    
+    cin >> ch;
+    
+    }while(ch!='n');
+    
+    return 0;
+}
