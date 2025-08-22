@@ -1,0 +1,34 @@
+// Number guessing game
+#include<bits/stdc++.h>
+using namespace std;
+
+void guessGame(int guess, int num){
+    srand(time(0));
+    num = rand()%100+1;
+    guess = 0;
+    int count = 1;
+    do{
+        cout << "enter guess between 1-100: ";
+        cin >> guess;
+        if(guess == num){
+            cout << "You got it!!\nYou guessed the number in " << count << "tries! " << endl;
+        }
+        else if(guess < num){
+            cout << "Guess higher!" << endl;
+            count++;
+        }
+        else if(guess > num){
+            cout << "Guess lower!" << endl;
+            count++;
+        }
+        else{
+            cout << "Invalid" << endl;
+        }
+    }while(guess != num);
+}
+
+int main(){
+    int guess,num;
+    guessGame(guess,num);
+    return 0;
+}
